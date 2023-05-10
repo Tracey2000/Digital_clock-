@@ -7,7 +7,7 @@ const inputE1 =document.getElementById("input");
 
 const formE1 = document.getElementById("form");
 
-const scoreE1 = document.getElementById("score");
+//const scoreE1 = document.getElementById("score");
 
 let score = JSON.parse(localStorage.getItem("score"));
 
@@ -15,7 +15,7 @@ if (!score)  {
     score =0;
 }
 
-scoreE1.innerText = `score: ${score}`;
+//scoreE1.innerText = `score: ${score}`;
 
 questionE1.innerText = `What is ${num1}
 multiply by ${num2}`;
