@@ -1,44 +1,26 @@
-const num1 = Math.ceil(Math.random()* 10);// to create a random number we can use math.random 
-const num2 = Math.ceil(Math.random()* 10);
+const  hourE1 = document.getElementById("Hours");
+const  minutesE1 = document.getElementById("Minutes");
+const  secondsE1 = document.getElementById("Seconds");
+const  amPmE1 = document.getElementById("AmPm");
 
-const questionE1 = document.getElementById("question");
-
-const inputE1 =document.getElementById("input");
-
-const formE1 = document.getElementById("form");
-
-//const scoreE1 = document.getElementById("score");
-
-let score = JSON.parse(localStorage.getItem("score"));
-
-if (!score)  {
-    score =0;
-}
-
-//scoreE1.innerText = `score: ${score}`;
-
-//questionE1.innerText = `What is ${num1}
-//multiply by ${num2}`;
-
-const correctAns = num1 * num2 
-
-formE1.addEventListener("submit", () => {
-const userAns = +inputE1.value;
-if (userAns === correctAns) {
-    score++;
-    updateLocalStorage();
-}else  { 
-    score--;
-    updateLocalStorage();
-}
-}
-);
-function updateLocalStorage() {
-    localStorage.setItem("score" ,
-    JSON.stringify(score));
-}
+function updateClock(){
+     let h = new Date().getHours()
+     let m = new Date().getMinutes()
+     let s = new Date().getSeconds()
+     let ampm = "AM"
     
-        
-    
+     if(h>12){
+      h = h - 12;
+        ampm = "Pm"
+     }
+     hourE1.innerHTML = h;
+     minutesE1.innerHTML = m;
+     secondsE1.innerHTML = s;
+    amPmE1.innerHTML = ampm;
+    setTimeout(() => {
+        updateClock();
+    }, 1000);
 
+}
 
+updateClock()
