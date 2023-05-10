@@ -17,8 +17,8 @@ if (!score)  {
 
 //scoreE1.innerText = `score: ${score}`;
 
-questionE1.innerText = `What is ${num1}
-multiply by ${num2}`;
+//questionE1.innerText = `What is ${num1}
+//multiply by ${num2}`;
 
 const correctAns = num1 * num2 
 
